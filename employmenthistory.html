@@ -1,0 +1,17 @@
+---
+layout: default
+title: "Employment History"
+enable_cover_letter: false
+include_page2_header: false
+---
+
+{% include resume/employmenthistory.html %}
+
+<script>
+    window.addEventListener('DOMContentLoaded', function() {
+        var detailsElements = document.getElementsByTagName('details');
+        for (var i = 0; i < detailsElements.length; i++) {
+          detailsElements[i].setAttribute('open', '');
+        }
+    });
+</script>
