@@ -1,5 +1,5 @@
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://tomdemay.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/tomdemaypro" # the subpath of your site, e.g. /blog
 title: "Tom DeMay" # the name of your site, e.g. ACME Corp.
 primary-color: rgba(51, 135, 179, 1);
 secondary-color: rgb(121, 212, 241);
