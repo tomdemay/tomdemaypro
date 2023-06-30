@@ -1,0 +1,23 @@
+<nav>
+    <div class="logo-full">Thomas J. DeMay, II</div>
+    <div class="logo-short">Tom DeMay</div> 
+    <input type="checkbox" id="toggle-nav" class="toggle-nav"> 
+    <label for="toggle-nav" class="toggle-nav-label"> 
+        <span class="menu-icon"> 
+            <span class="line"></span> 
+            <span class="line"></span> 
+            <span class="line"></span> 
+        </span>
+    </label>
+    <ul class="navigation">
+        <li><a href="index.html">About Me</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contactme.html">Contact Me</a></li>
+        {% if page.enable_cover_letter %}
+        <li>
+            <input type="checkbox" id="show-cover-letter-checkbox">
+            <a class="show-cover-letter-label-checkbox">Cover Letter</a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>

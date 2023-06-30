@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: " en-US" }}">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>{{ site.title }} - {{ page.title }}</title>
+    <link rel="stylesheet" href="{{ "/assets/css/print-styles.css" | relative_url }}" media="print">
+    <link rel="stylesheet" href="{{ "/assets/css/screen-styles.css" | relative_url }}" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">    
+    <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        {% include sitenavigation.html %}
+    </header>
+
+    <section id="about" class="content">
+        
+        {% include leftpane.html %}
+
+        <div class="stacked-container">
+
+            {% if page.enable_cover_letter %}
+                {% include coverletter.html %}
+            {% else %}
+                <div class="headercontent">
+                    {% include headercontent.html %}
+                </div>
+            {% endif %}
+
+            {% if page.include_page2_header %}
+                {% include page2header.html %}
+            {% endif %}
+
+            <div class="right-pane">
+                {{ content }}
+            </div>
+
+            {% include footer.html %}
+
+        </div>
+    </section>
+<body>
+
+<script src="{{ site.base_url }}/assets/js/script.js">
+</script>
+
+</html>
