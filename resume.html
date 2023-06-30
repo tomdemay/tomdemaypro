@@ -3,6 +3,8 @@ layout: default
 title: "Resume"
 enable_cover_letter: true
 include_page2_header: true
+print-resume-title: "Principal Software Engineer - Tom DeMay Resume - 2023-06"
+print-cv-title: "Principal Software Engineer - Tom DeMay CV - 2023-06"
 ---
 
 {% include resume/headline.html %}
@@ -14,3 +16,18 @@ include_page2_header: true
 {% include resume/patents.html %}
 {% include resume/publications.html %}
 {% include resume/hobbies.html %}
+
+<script>
+    window.addEventListener('beforeprint', function() {
+        var checkbox = document.getElementById('show-cover-letter-checkbox');            
+        var pageTitle = document.getElementsByTagName('title')[0];
+        if (checkbox.checked) {
+            pageTitle.innerText = "{{ page.print-cv-title }}";
+        } else {
+            pageTitle.innerText = "{{ page.print-resume-title }}";
+        }
+    });
+    window.addEventListener('afterprint', function() {
+        updateTitle();
+    });
+</script>
