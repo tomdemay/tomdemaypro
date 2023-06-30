@@ -17,6 +17,12 @@ footer,
     display: none;
 }
 
+.local-headshot {
+    width: 125px;
+}
+.remote-headshot {
+    width: 100px;
+}
 .headshot {
     top: 0px;
     display: block;
@@ -25,7 +31,6 @@ footer,
     height: auto;
     padding: 5px;
     border-radius: 50%;
-    width: 100px;
 }
 
 /* Reset styles */
@@ -265,7 +270,6 @@ details > ul {
 .page2-headshot {
     padding: 5px;
     border-radius: 50%;
-    width: 100px;
 }
 
 .page2-header > .table {
