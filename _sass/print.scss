@@ -64,6 +64,13 @@ h3 {
 
 a {
     text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bolder;
+}
+
+a:visited {
+    font-weight: bolder;
+    color: var(--primary-color);
 }
 
 .page-break {

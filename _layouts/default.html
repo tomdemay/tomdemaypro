@@ -13,12 +13,12 @@
 
 <body>
     <header>
-        {% include sitenavigation.html %}
+        {% include sitelayout/sitenavigation.html %}
     </header>
 
     <section id="about" class="content">
         
-        {% include leftpane.html %}
+        {% include sitelayout/leftpane.html %}
 
         <div class="stacked-container">
 
@@ -26,19 +26,19 @@
                 {% include resume/coverletter.html %}
             {% else %}
                 <div class="headercontent">
-                    {% include headercontent.html %}
+                    {% include sitelayout/headercontent.html %}
                 </div>
             {% endif %}
 
             {% if page.include_page2_header %}
-                {% include page2header.html %}
+                {% include sitelayout/page2header.html %}
             {% endif %}
 
             <div class="right-pane">
                 {{ content }}
             </div>
 
-            {% include footer.html %}
+            {% include sitelayout/footer.html %}
 
         </div>
     </section>
