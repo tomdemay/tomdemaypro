@@ -1,0 +1,94 @@
+<details id="htmlcss">
+    <summary>HTML, CSS and JavaScript</summary>
+    <p>Creating this site gave me a deeper understanding of CSS, JavaScript and the DOM object model. I better
+        understand how easy it is to change the layout of a site based on different criteria. With minor CSS changes the
+        layout of this site is radically different whether it's being viewed on a desktop computer, mobile phone, printed
+        or exporting to PDFs.</p>
+    <div class="wanttoseeanimation">
+        What to see some site animation using JavaScript and CSS?
+        <ul>
+            <li>
+                <input type="checkbox" id="rotate-headshot-checkbox">
+                <label for="rotate-headshot-checkbox" class="rotate-headshot-label-checkbox">Rotate Headshot</label>
+            </li>
+        </ul>
+        <small>This section is hidden by CSS when this page is printed.</small>
+    </div>
+</details>
+
+
+<style>
+    @media print {
+        .wanttoseeanimation {
+            display: none;
+        }
+    }
+    @media screen {
+        #rotate-headshot-checkbox {
+            display: none;
+        }
+
+        .rotate-animation {
+            animation-name: rotateAnimation;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        .wanttoseeanimation {
+            display: block;
+            text-align: center;
+            padding-right: 10px;
+            user-select: none;
+            cursor: pointer;
+            /* background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color)); */
+        }
+
+        .wanttoseeanimation li {
+            list-style: none;
+            color: #fff;
+            background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        .wanttoseeanimation label {
+            display: block;
+            padding: 5px;
+            box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .wanttoseeanimation input:checked ~ label {
+            box-shadow: -3px -3px 10px 0px rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .wanttoseeanimation label:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .wanttoseeanimation label:active {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    }
+
+</style>
+<script>
+const rotateHeadshotCheckbox = document.getElementById('rotate-headshot-checkbox')
+const rotateHeadshotCheckboxLink = document.querySelector('.rotate-headshot-label-checkbox')
+const headshot = document.querySelector('.headshot');
+
+if (rotateHeadshotCheckboxLink && rotateHeadshotCheckbox && headshot) {
+    rotateHeadshotCheckbox.addEventListener('change', function () {
+        if (this.checked) {
+            // headshot.style.animationPlayState = "running";
+            headshot.classList.add("rotate-animation")
+        } else {
+            // headshot.style.animationPlayState = "paused";
+            headshot.classList.remove("rotate-animation")
+        }
+    });
+}    
+</script>

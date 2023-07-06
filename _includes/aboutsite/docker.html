@@ -1,0 +1,22 @@
+<details id="docker">
+    <summary>Docker and Python Docker Module</summary>
+    <p>
+        Docker is an open-source platform that enables developers to automate the deployment
+        and management of applications in lightweight, isolated containers. Containers
+        provide a consistent and reproducible environment for running software,
+        allowing applications to be easily packaged with their dependencies, and
+        ensuring consistency across different systems.
+    </p>
+    <p>RabbitMQ has a reputation as being hard to install and configure. So I choose not to.
+        A RabbitMQ docker image is available in the Docker hub repository. Simply executing
+        the following command pulls a fully functional pre-configured RabbitMQ server
+        and starts it on my local machine. </p>
+    <div class="code-snippet">
+        <pre><code>docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq</code></pre>
+    </div>
+    <p>
+        I was able to integrate the Python Docker module into my Python Flask web site to
+        download the RabbitMQ docker container from the Docker repository and start it when the Flask web site starts
+        and stops the RabbitMQ docker container when the Flask web site stops.
+    </p>
+</details>

@@ -330,3 +330,22 @@ details > ul {
 .page2-header .links > .table > .column-two {
     text-align: left;
 }
+
+.code-snippet {
+    padding: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+  }
+  
+  .code-snippet pre {
+    padding: 10px;
+    border-radius: 4px;
+    color: #000;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    background-color: #ccc;
+  }
+
+ .code-snippet pre code {
+    display: block;
+  }

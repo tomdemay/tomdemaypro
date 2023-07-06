@@ -12,19 +12,20 @@ window.addEventListener('beforeprint', function() {
     }
 });
 
-checkboxLink.addEventListener('click', function () {
-    // show/hide cover letter
-    checkbox.checked = !checkbox.checked;
-    checkbox.dispatchEvent(new Event('change'));
-    updateTitle();
-});
+if (checkboxLink && checkbox) {
+    checkboxLink.addEventListener('click', function () {
+        // show/hide cover letter
+        checkbox.checked = !checkbox.checked;
+        checkbox.dispatchEvent(new Event('change'));
+        updateTitle();
+    });
 
-checkbox.addEventListener('change', function() {
-    togglenav.checked = false;
-    if (this.checked) {
-        coverLetter.style.display = 'block';
-    } else {
-        coverLetter.style.display = 'none';
-    }
-});
-
+    checkbox.addEventListener('change', function () {
+        togglenav.checked = false;
+        if (this.checked) {
+            coverLetter.style.display = 'block';
+        } else {
+            coverLetter.style.display = 'none';
+        }
+    });
+}

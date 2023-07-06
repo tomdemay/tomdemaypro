@@ -1,0 +1,12 @@
+<details id="rabbitmq">
+    <summary>RabbitMQ</summary>
+    <p>Celery supports various 
+        message brokers, such as RabbitMQ or Redis, to handle task message passing 
+        and result storage. It provides a straightforward way to scale and parallelize 
+        tasks, making it suitable for handling time-consuming or resource-intensive 
+        operations in a distributed environment. When a call is made to my WebHook in my 
+        Python Flask application, Python Celery posts a message in RabbitMQ and
+        the Celery Worker process pulls the message from RabbitMQ to perform the task
+        to recreate my CV and Resume PDFs.
+    </p>
+</details>
