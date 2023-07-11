@@ -9,16 +9,16 @@
         to recreate my CV and Resume PDFs without blocking calls to the server while the 
         task is running. In order to do so, I needed a background task. Here's the catch,  
         Python's multi-threading is limited by Python's Global Interpreter Lock (GIL). 
-        Therefore, running my task in a seperate thread can make my WebSite unavailable 
+        Therefore, running my task in a separate thread can make my WebSite unavailable 
         to callers until the task is done. 
     </p>
     <p>
         Using Celery I can post a notification to a "Message Broker". A 
-        seperate Celery Worker process pulls that task from the Message Broker
+        separate Celery Worker process pulls that task from the Message Broker
         and executes it in the Worker's process, freeing up my REST Web server
         to just respond to REST API calls and queing work to be done elsewhere. 
     </p>
-    <p>The Flask REST Web Site accepts a call from the WebHook and responds with 
+    <p>The Flask REST Website accepts a call from the WebHook and responds with 
         200: "Task Scheduled", or 429: "The requested work is already being processed"
         and hands the task off to Celery to run the job.
     </p>
