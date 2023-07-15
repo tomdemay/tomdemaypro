@@ -48,32 +48,6 @@
 
   @media screen and (max-width: {% if page.enable_cover_letter %}984px {% else %} 864px {% endif %}) {
     .tomdemaypro-logo {
-      display: none;
-    }
-    .logo-full {
-      display: inherit;
-    }
-
-    .logo-short {
-      display: none;
-    }
-  }
-
-  @media screen and (max-width: {% if page.enable_cover_letter %}885px {% else %} 755px {% endif %}) {
-    .tomdemaypro-logo {
-      display: none;
-    }
-    .logo-full {
-      display: none;
-    }
-
-    .logo-short {
-      display: inherit;
-    }
-  }
-
-  @media screen and (max-width: 780px) {
-    .tomdemaypro-logo {
       display: inherit;
     }
     .logo-full {
@@ -123,7 +97,7 @@
       display: none;
     }
   }
-  @media screen and (max-width: 780px) {
+  @media screen and (max-width: {% if page.enable_cover_letter %}984px {% else %} 864px {% endif %}) {
     .toggle-nav-label {
       display: flex;
       align-items: center;
