@@ -79,6 +79,10 @@ a:visited {
     page-break-after: always;
 }
 
+.no-page-break {
+    page-break-inside: avoid;
+}
+
 .headercontent>.address {
     text-align: center;
     font-size: small;
