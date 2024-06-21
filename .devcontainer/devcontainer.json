@@ -1,4 +1,4 @@
 {
-    "name": "Jekyll",
+    "name": "tomdemaypro development container",
     "image": "mcr.microsoft.com/devcontainers/jekyll:2-bullseye"
 }
