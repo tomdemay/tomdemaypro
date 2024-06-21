@@ -1,6 +1,6 @@
-url: "https://tomdemay.pro" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "" # the subpath of your site, e.g. /blog
-title: "Tom DeMay" # the name of your site, e.g. ACME Corp.
-primary-color: rgba(51, 135, 179, 1);
-secondary-color: rgb(121, 212, 241);
+url: "https://tomdemay.pro"
+baseurl: ""
+title: "Tom DeMay"
+primary-color: rgba(51, 135, 179, 1)
+secondary-color: rgb(121, 212, 241)
 cv-title: "CV"

@@ -1,0 +1,16 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Jekyll Server",
+            "type": "shell",
+            "command": "jekyll serve --watch --livereload --force_polling",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "detail": "Runs Jekyll server with livereload and force polling options."
+        },
+    ]
+}
