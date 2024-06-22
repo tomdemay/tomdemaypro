@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>{{ site.title }} - {{ page.title }}</title>
-    <link rel="stylesheet" href="{{ "/assets/css/print-styles.css" | relative_url }}" media="print">
-    <link rel="stylesheet" href="{{ "/assets/css/screen-styles.css" | relative_url }}" media="screen">
+    <link id="print-css" rel="stylesheet" href="{{ "/assets/css/print-styles.css" | relative_url }}" media="print">
+    <link id="screen-css" rel="stylesheet" href="{{ "/assets/css/screen-styles.css" | relative_url }}" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">    
     <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon">
     {% if page.enable_cover_letter %}

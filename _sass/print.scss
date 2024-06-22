@@ -241,8 +241,12 @@ details > ul {
     margin: 0;
 }
 
-.two-column-list li {
+.flexdiv {
     display: flex;
+    justify-content: space-between;
+}
+
+.two-column-list li {
     justify-content: space-between;
     margin: 0;
     border: 1px solid #ccc;
