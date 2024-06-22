@@ -23,6 +23,12 @@ cv-pdf-title: "CV - Tom DeMay - Principal Software Engineer - 2024-06"
         return checkbox.checked ? "{{ page.cv-pdf-title }}" : "{{ page.resume-pdf-title }}";
     }
     document.addEventListener('DOMContentLoaded', function () { // Wait for the document to load
+
+        var detailsElements = document.getElementsByTagName('details');
+        for (var i = 0; i < detailsElements.length; i++) {
+            detailsElements[i].setAttribute('open', '');
+        }
+
         if (window.location.search.indexOf('includeCoverLetter') !== -1) { // Check if 'includeCoverLetter' is in the query string
             var checkbox = document.getElementById('show-cover-letter-checkbox');
             if (checkbox) { // Ensure the checkbox exists
