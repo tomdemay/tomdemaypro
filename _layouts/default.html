@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>{{ site.title }} - {{ page.title }}</title>
-    <link rel="stylesheet" href="{{ "/assets/css/print-styles.css" | relative_url }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">    
+    <link rel="stylesheet" href="{{ "/assets/css/altamira-styles.css" | relative_url }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon">
     {% if page.enable_cover_letter %}
     <script>
         function updateTitle() {
-            var checkbox = document.getElementById('show-cover-letter-checkbox');            
+            var checkbox = document.getElementById('show-cover-letter-checkbox');
             var pageTitle = document.getElementsByTagName('title')[0];
             if (checkbox.checked) {
                 pageTitle.innerText = "{{ site.title }} - {{ site.cv-title }}";
@@ -29,21 +29,21 @@
     </header>
 
     <section id="about" class="content">
-        
+
         {% include sitelayout/leftpane.html %}
 
         <div class="stacked-container">
 
             {% if page.enable_cover_letter %}
-                {% include resume/coverletter.html %}
+            {% include resume/coverletter.html %}
             {% else %}
-                <div class="headercontent">
-                    {% include sitelayout/headercontent.html %}
-                </div>
+            <div class="headercontent">
+                {% include sitelayout/headercontent.html %}
+            </div>
             {% endif %}
 
             {% if page.include_page2_header %}
-                {% include sitelayout/page2header.html %}
+            {% include sitelayout/page2header.html %}
             {% endif %}
 
             <div class="right-pane">
@@ -54,9 +54,10 @@
 
         </div>
     </section>
-<body>
 
-<script src="{{ '/assets/js/script.js' | relative_url }}">
-</script>
+    <body>
+
+        <script src="{{ '/assets/js/script.js' | relative_url }}">
+        </script>
 
 </html>
