@@ -106,9 +106,26 @@ summary span.right {
     color: #fff;
 }
 
-/* this is a trick so that page headers and footers don't show up on the printed page */
+.flexdiv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.two-column-list li {
+    justify-content: space-between;
+}
+
+.two-column-list li .left {
+    text-align: left;
+}
+
+.two-column-list li .right {
+    text-align: right;
+}
+
 @page {
     size: auto;
+    /* this is a trick so that page headers and footers don't show up on the printed page */
     margin: 20px;
 }
 
