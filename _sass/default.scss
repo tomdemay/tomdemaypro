@@ -1,0 +1,91 @@
+:root {
+    --primary-color: rgba(51, 135, 179, 1);
+    --secondary-color: rgb(121, 212, 241);
+}
+
+.left-pane>.links,
+.cover-letter {
+    display: none;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0px;
+}
+
+.no-page-break {
+    page-break-inside: avoid;
+}
+
+p {
+    page-break-inside: avoid;
+}
+
+li {
+    padding: 3px;
+    page-break-inside: avoid;
+}
+
+.page-break {
+    border: none;
+    height: 0;
+    page-break-after: always;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.headercontent>.address {
+    text-align: center;
+}
+
+.headercontent>.links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.headercontent>.links>.table {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 0 10px;
+}
+
+.headercontent>.links>.table>.cell {
+    padding: 0;
+    margin: 0;
+}
+
+.headercontent>.links>.table>.column-one {
+    text-align: right;
+}
+
+.headercontent>.links>.table>.column-two {
+    text-align: left;
+}
+
+details {
+    margin: 5px 0;
+}
+
+details summary {
+    cursor: pointer;
+    justify-content: space-between;
+    color: white;
+    align-items: first baseline;
+    position: relative;
+}
+
+summary span.left {
+    position: absolute;
+}
+
+summary span.right {
+    position: absolute;
+    right: 5px;
+    color: white;
+}
