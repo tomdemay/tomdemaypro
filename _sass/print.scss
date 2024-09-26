@@ -43,27 +43,27 @@ body {
 
 h1 {
     font-size: xx-large;
-    color: var(--primary-color);
+    color: var(--dark-color);
 }
 
 h2 {
     font-size: large;
-    color: var(--primary-color);
+    color: var(--dark-color);
 }
 
 h3 {
-    color: var(--primary-color);
+    color: var(--dark-color);
 }
 
 a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: var(--dark-color);
     font-weight: bolder;
 }
 
 a:visited {
     font-weight: bolder;
-    color: var(--primary-color);
+    color: var(--dark-color);
 }
 
 .headercontent>.address {
@@ -103,9 +103,9 @@ details summary {
     font-size: larger;
     list-style-type: none;
     padding-left: 0;
-    background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-    padding: 3px;
+    background-image: linear-gradient(to right, var(--dark-color), var(--light-color));
     margin: 0;
+    padding: 5px;
 }
 
 details>div,
@@ -127,7 +127,10 @@ details>ul {
     padding: 10px;
 }
 
-.skills-list,
+details>div {
+    padding: 5px 0px 5px 10px;
+}
+
 .hobbies-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -138,7 +141,6 @@ details>ul {
     margin: 0 0 0 20px;
 }
 
-.skills-list>li,
 .hobbies-list>li {
     break-inside: avoid-page;
     padding: 0 20px 0 0;

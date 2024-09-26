@@ -1,6 +1,7 @@
 :root {
-    --primary-color: rgba(51, 135, 179, 1);
-    --secondary-color: rgb(121, 212, 241);
+    --dark-color: rgba(51, 135, 179, 1);
+    --medium-color: rgb(80, 164, 197);
+    --light-color: rgb(121, 212, 241);
 }
 
 .left-pane>.links,
@@ -88,4 +89,69 @@ summary span.right {
     position: absolute;
     right: 5px;
     color: white;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* Adds space between each skill item */
+    position: relative;
+    /* Needed for the bullet styling */
+    list-style: none;
+    /* Remove default bullets */
+}
+
+.skill-item {
+    display: flex;
+    align-items: baseline;
+    /* Center aligns items vertically */
+    position: relative;
+    // padding-left: 0.5em;
+    /* Add padding to ensure alignment with bullets */
+}
+
+.skill-item strong {
+    flex-basis: 33%;
+    /* Left column takes up 1/3 of the available space */
+    flex-shrink: 0;
+    /* Prevents shrinking */
+    margin-right: 10px;
+    /* Adds space between the category and the skills */
+    word-wrap: break-word;
+    /* Allows word wrapping within the left column */
+}
+
+.skill-item span {
+    flex-basis: 67%;
+    /* Right column takes up 2/3 of the available space */
+    flex-grow: 1;
+    /* Ensures the text in the second column uses remaining space */
+}
+
+.competency-indicator {
+    display: inline-block;
+    font-size: 1rem;
+    /* Adjust size as needed */
+    line-height: 1;
+    /* Ensure vertical alignment */
+    color: var(--dark-color);
+    /* Fill color for stars */
+    padding-left: 0.25em;
+}
+
+.basic-understanding::before {
+    content: "★☆☆";
+}
+
+.good-knowledge::before {
+    content: "★★☆";
+}
+
+.very-proficient::before {
+    content: "★★★";
 }

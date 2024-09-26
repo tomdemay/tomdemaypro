@@ -2,7 +2,8 @@
     <summary>HTML, CSS and JavaScript</summary>
     <p>Creating this site gave me a deeper understanding of CSS, JavaScript and the DOM object model. I better
         understand how easy it is to change the layout of a site based on different criteria. With minor CSS changes the
-        layout of this site is radically different whether it's being viewed on a desktop computer, mobile phone, printed
+        layout of this site is radically different whether it's being viewed on a desktop computer, mobile phone,
+        printed
         or exporting to PDFs.</p>
     <div class="wanttoseeanimation">
         What to see some site animation using JavaScript and CSS?
@@ -23,6 +24,7 @@
             display: none;
         }
     }
+
     @media screen {
         #rotate-headshot-checkbox {
             display: none;
@@ -41,13 +43,13 @@
             padding-right: 10px;
             user-select: none;
             cursor: pointer;
-            /* background-image: linear-gradient(to right, var(--secondary-color), var(--primary-color)); */
+            /* background-image: linear-gradient(to right, var(--light-color), var(--dark-color)); */
         }
 
         .wanttoseeanimation li {
             list-style: none;
             color: #fff;
-            background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            background-image: linear-gradient(to right, var(--dark-color), var(--light-color));
             margin: 5px;
             border-radius: 5px;
         }
@@ -60,7 +62,7 @@
             background-color: rgba(0, 0, 0, 0.1);
         }
 
-        .wanttoseeanimation input:checked ~ label {
+        .wanttoseeanimation input:checked~label {
             box-shadow: -3px -3px 10px 0px rgba(0, 0, 0, 0.7);
             background-color: rgba(0, 0, 0, 0.3);
         }
@@ -73,22 +75,21 @@
             background-color: rgba(0, 0, 0, 0.5);
         }
     }
-
 </style>
 <script>
-const rotateHeadshotCheckbox = document.getElementById('rotate-headshot-checkbox')
-const rotateHeadshotCheckboxLink = document.querySelector('.rotate-headshot-label-checkbox')
-const headshot = document.querySelector('.headshot');
+    const rotateHeadshotCheckbox = document.getElementById('rotate-headshot-checkbox')
+    const rotateHeadshotCheckboxLink = document.querySelector('.rotate-headshot-label-checkbox')
+    const headshot = document.querySelector('.headshot');
 
-if (rotateHeadshotCheckboxLink && rotateHeadshotCheckbox && headshot) {
-    rotateHeadshotCheckbox.addEventListener('change', function () {
-        if (this.checked) {
-            // headshot.style.animationPlayState = "running";
-            headshot.classList.add("rotate-animation")
-        } else {
-            // headshot.style.animationPlayState = "paused";
-            headshot.classList.remove("rotate-animation")
-        }
-    });
-}    
+    if (rotateHeadshotCheckboxLink && rotateHeadshotCheckbox && headshot) {
+        rotateHeadshotCheckbox.addEventListener('change', function () {
+            if (this.checked) {
+                // headshot.style.animationPlayState = "running";
+                headshot.classList.add("rotate-animation")
+            } else {
+                // headshot.style.animationPlayState = "paused";
+                headshot.classList.remove("rotate-animation")
+            }
+        });
+    }    
 </script>

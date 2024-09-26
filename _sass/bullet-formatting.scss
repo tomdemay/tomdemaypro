@@ -30,7 +30,7 @@ summary::-webkit-details-marker {
 details summary {
     font-size: larger;
     list-style-type: none;
-    background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    background-image: linear-gradient(to right, var(--dark-color), var(--light-color));
     padding: 5px;
     margin: 5px 0px 5px 0px;
 }

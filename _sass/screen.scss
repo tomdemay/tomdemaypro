@@ -39,8 +39,8 @@ header {
     z-index: 100;
     margin: 0;
     background-image: linear-gradient(to right,
-            var(--primary-color),
-            var(--secondary-color));
+            var(--dark-color),
+            var(--light-color));
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -246,8 +246,8 @@ details summary {
     border: 1px solid #ddd;
     transition: background-color 3s, color 3s;
     background-image: linear-gradient(to right,
-            var(--primary-color),
-            var(--secondary-color));
+            var(--dark-color),
+            var(--light-color));
     margin: 0;
     padding: 10px;
 }
@@ -262,8 +262,8 @@ summary span.right {
 
 summary:hover {
     background-image: linear-gradient(to right,
-            var(--secondary-color),
-            var(--primary-color));
+            var(--light-color),
+            var(--dark-color));
     color: #666;
 }
 
@@ -282,14 +282,14 @@ details[open] summary:before {
 
 details[open] summary {
     background-image: linear-gradient(to right,
-            var(--secondary-color),
-            var(--primary-color));
+            var(--light-color),
+            var(--dark-color));
 }
 
 details[open] details:not([open])>summary {
     background-image: linear-gradient(to right,
-            var(--primary-color),
-            var(--secondary-color));
+            var(--dark-color),
+            var(--light-color));
 }
 
 details>div,
@@ -362,7 +362,7 @@ footer>.table>.column-two {
 }
 
 footer a {
-    color: var(--secondary-color);
+    color: var(--light-color);
     text-decoration: none;
 }
 
@@ -371,7 +371,6 @@ footer a:hover {
     color: #fff;
 }
 
-.skills-list,
 .hobbies-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -380,7 +379,6 @@ footer a:hover {
     list-style-position: outside;
 }
 
-.skills-list>li,
 .hobbies-list>li {
     display: flex;
     align-items: center;
@@ -394,11 +392,7 @@ footer a:hover {
     display: none;
 }
 
-.skills-list>li:hover {
-    font-weight: bolder;
-}
 
-.skills-list>li:before,
 .hobbies-list>li:before {
     position: absolute;
     content: "";
@@ -407,8 +401,8 @@ footer a:hover {
     width: 0.75em;
     height: 0.75em;
     background-image: linear-gradient(to right,
-            var(--primary-color),
-            var(--secondary-color));
+            var(--dark-color),
+            var(--light-color));
     border-radius: 50%;
     margin-right: 0.5em;
 }
@@ -559,7 +553,7 @@ footer a:hover {
     }
 
     .left-pane a {
-        color: var(--secondary-color);
+        color: var(--light-color);
         text-decoration: none;
     }
 
@@ -585,7 +579,7 @@ footer a:hover {
     .left-pane h3 {
         font-weight: normal;
         font-size: 1.2em;
-        color: var(--secondary-color);
+        color: var(--light-color);
     }
 
     .left-pane ul li::before {
@@ -594,8 +588,8 @@ footer a:hover {
         width: 0.75em;
         height: 0.75em;
         background-image: linear-gradient(to right,
-                var(--primary-color),
-                var(--secondary-color));
+                var(--dark-color),
+                var(--light-color));
         border-radius: 50%;
         margin-right: 10px;
     }
@@ -606,7 +600,7 @@ footer a:hover {
 
     .left-pane ul a {
         text-decoration: none;
-        color: var(--secondary-color);
+        color: var(--light-color);
     }
 
     .left-pane ul li {
