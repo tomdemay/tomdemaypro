@@ -124,6 +124,7 @@ summary span.right {
     /* Adds space between the category and the skills */
     word-wrap: break-word;
     /* Allows word wrapping within the left column */
+    max-width: 315px;
 }
 
 .skill-item span {
