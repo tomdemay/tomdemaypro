@@ -1,5 +1,6 @@
 .fa-external-link-alt {
     visibility: hidden;
+    width: 0;
 }
 
 /* hide everything that shouldn't print */
@@ -99,13 +100,30 @@ summary::-webkit-details-marker {
     display: none;
 }
 
+.no-page-break,
+p,
+li,
+details summary {
+    page-break-inside: avoid;
+}
+
+li {
+    page-break-inside: avoid;
+}
+
+.page-break {
+    page-break-after: always;
+}
+
 details summary {
     font-size: larger;
+    font-weight: bolder;
     list-style-type: none;
     padding-left: 0;
-    background-image: linear-gradient(to right, var(--dark-color), var(--light-color));
     margin: 0;
     padding: 5px;
+    border-top: 2px solid var(--dark-color);
+    /* Adds a solid line above */
 }
 
 details>div,
@@ -124,7 +142,6 @@ details>div {
 
 details>ul {
     margin: 3px 0 3px 0;
-    padding: 10px;
 }
 
 details>div {
@@ -149,31 +166,16 @@ details>div {
 }
 
 .projects-list {
-    list-style-type: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 10px;
-    padding: 0 5px 0 0;
+    padding-left: 20px;
 }
 
 .projects-list ul {
     list-style-type: square;
-    padding: 0 0 0 20px;
 }
 
 .projects-list>li {
     break-inside: avoid-page;
-    border-radius: 8px;
-    padding: 5px;
-    box-sizing: content-box;
-    border: 1px solid #ccc;
     margin-bottom: 5px;
-    background: linear-gradient(to right, #fff, #ccc);
-    position: relative;
-}
-
-.projects-list li ul {
-    padding: 0 0 0 20px;
 }
 
 .two-column-list {
@@ -190,12 +192,9 @@ details>div {
 .two-column-list li {
     justify-content: space-between;
     margin: 0;
-    border: 1px solid #ccc;
+    border-top: 1px solid #ccc;
     box-sizing: content-box;
-    background-color: #ddd;
     padding: 5px;
-    border-radius: 8px;
-    background-image: linear-gradient(to right, #fff, #ccc);
 }
 
 .two-column-list li .left {

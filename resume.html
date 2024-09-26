@@ -1,10 +1,10 @@
 ---
 layout: default
 title: "Resume"
-enable_cover_letter: true
+enable_download: true
 include_page2_header: true
-resume-pdf-title: "Resume - Tom DeMay - Principal Software Engineer - 2024-06"
-cv-pdf-title: "CV - Tom DeMay - Principal Software Engineer - 2024-06"
+resume-pdf-title: "Resume - Tom DeMay - Manager, Software Engineer Lead - 2024-10"
+cv-pdf-title: "CV - Tom DeMay - Manager, Software Engineer Lead - 2024-10"
 ---
 
 {% include resume/headline.html %}
@@ -16,32 +16,3 @@ cv-pdf-title: "CV - Tom DeMay - Principal Software Engineer - 2024-06"
 {% include resume/patents.html %}
 {% include resume/publications.html %}
 {% include resume/hobbies.html %}
-
-<script>
-    function getPdfTitle() {
-        var checkbox = document.getElementById('show-cover-letter-checkbox');
-        return checkbox.checked ? "{{ page.cv-pdf-title }}" : "{{ page.resume-pdf-title }}";
-    }
-    document.addEventListener('DOMContentLoaded', function () { // Wait for the document to load
-        if (window.location.search.indexOf('bulletFormat') !== -1) { // Check if 'bulletFormat' is in the query string
-            var printCss = document.getElementById('print-css');
-            if (printCss) { // Ensure the print CSS exists
-                printCss.href = "{{ '/assets/css/bullet-styles.css' | relative_url }}";
-            }
-        }
-        if (window.location.search.indexOf('includeCoverLetter') !== -1) { // Check if 'includeCoverLetter' is in the query string
-            var checkbox = document.getElementById('show-cover-letter-checkbox');
-            if (checkbox) { // Ensure the checkbox exists
-                checkbox.checked = true;
-                checkbox.dispatchEvent(new Event('change'));
-            }
-        }
-    });
-    window.addEventListener('beforeprint', function () {
-        var pageTitle = document.getElementsByTagName('title')[0];
-        pageTitle.innerText = getPdfTitle();
-    });
-    window.addEventListener('afterprint', function () {
-        updateTitle();
-    });
-</script>

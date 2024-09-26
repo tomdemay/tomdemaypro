@@ -4,8 +4,7 @@
     --light-color: rgb(121, 212, 241);
 }
 
-.left-pane>.links,
-.cover-letter {
+.left-pane>.links {
     display: none;
 }
 
@@ -15,23 +14,13 @@ h3 {
     margin: 0px;
 }
 
-.no-page-break {
-    page-break-inside: avoid;
-}
-
-p {
-    page-break-inside: avoid;
-}
-
 li {
     padding: 3px;
-    page-break-inside: avoid;
 }
 
 .page-break {
     border: none;
     height: 0;
-    page-break-after: always;
 }
 
 body {
@@ -74,9 +63,7 @@ details {
 }
 
 details summary {
-    cursor: pointer;
     justify-content: space-between;
-    color: white;
     align-items: first baseline;
     position: relative;
 }

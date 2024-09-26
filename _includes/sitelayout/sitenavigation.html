@@ -22,17 +22,17 @@
     <li><a href="resume.html">Resume</a></li>
     <li><a href="contactme.html">Contact Me</a></li>
     <li><a href="aboutthissite.html">About Site</a></li>
-    {% if page.enable_cover_letter %}
-    <li class="cover-letter-menu-item">
-      <input type="checkbox" id="show-cover-letter-checkbox" />
-      <a class="show-cover-letter-label-checkbox">Cover Letter</a>
+    {% if page.enable_download %}
+    <li class="download-menu-item">
+        <input type="checkbox" id="show-download-checkbox" />
+        <a id="download-button" class="show-download-label-checkbox" onclick="window.print(); return false;">Print to PDF</a>
     </li>
     {% endif %}
   </ul>
 </nav>
 
 <style>
-  @media screen and (min-width: {% if page.enable_cover_letter %}985px {% else %} 865px {% endif %}) {
+  @media screen and (min-width: {% if page.enable_download %}985px {% else %} 865px {% endif %}) {
     /* hello */
     .tomdemaypro-logo {
       display: inherit;
@@ -46,7 +46,7 @@
     }
   }
 
-  @media screen and (max-width: {% if page.enable_cover_letter %}984px {% else %} 864px {% endif %}) {
+  @media screen and (max-width: {% if page.enable_download %}984px {% else %} 864px {% endif %}) {
     .tomdemaypro-logo {
       display: inherit;
     }
@@ -97,7 +97,7 @@
       display: none;
     }
   }
-  @media screen and (max-width: {% if page.enable_cover_letter %}984px {% else %} 864px {% endif %}) {
+  @media screen and (max-width: {% if page.enable_download %}984px {% else %} 864px {% endif %}) {
     .toggle-nav-label {
       display: flex;
       align-items: center;

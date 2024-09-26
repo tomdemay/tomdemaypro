@@ -10,19 +10,6 @@
     <link id="screen-css" rel="stylesheet" href="{{ "/assets/css/screen-styles.css" | relative_url }}" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">    
     <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon">
-    {% if page.enable_cover_letter %}
-    <script>
-        function updateTitle() {
-            var checkbox = document.getElementById('show-cover-letter-checkbox');            
-            var pageTitle = document.getElementsByTagName('title')[0];
-            if (checkbox.checked) {
-                pageTitle.innerText = "{{ site.title }} - {{ site.cv-title }}";
-            } else {
-                pageTitle.innerText = "{{ site.title }} - {{ page.title }}";
-            }
-        }
-    </script>
-    {% endif %}
 </head>
 
 <body>
@@ -36,7 +23,7 @@
 
         <div class="stacked-container">
 
-            {% if page.enable_cover_letter %}
+            {% if page.enable_download %}
                 {% include resume/coverletter.html %}
             {% else %}
                 <div class="headercontent">

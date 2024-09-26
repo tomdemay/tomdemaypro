@@ -1,5 +1,6 @@
 /* hide elements in mobile view */
-.headercontent {
+.headercontent,
+.cover-letter {
     display: none;
 }
 
@@ -57,6 +58,11 @@ nav {
     user-select: none;
 }
 
+details summary {
+    cursor: pointer;
+    color: white;
+}
+
 .code-snippet {
     padding: 10px;
     font-family: "Courier New", monospace;
@@ -76,7 +82,7 @@ nav {
     display: block;
 }
 
-#show-cover-letter-checkbox {
+#show-download-checkbox {
     display: none;
 }
 
@@ -158,7 +164,7 @@ img.tomdemaypro-logo {
 }
 
 .navigation a,
-.show-cover-letter-label-checkbox {
+.show-download-label-checkbox {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
@@ -176,12 +182,12 @@ img.tomdemaypro-logo {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.show-cover-letter-label-checkbox {
+.show-download-label-checkbox {
     display: inline;
     cursor: pointer;
 }
 
-.navigation li>input:checked~.show-cover-letter-label-checkbox {
+.navigation li>input:checked~.show-download-label-checkbox {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -391,7 +397,6 @@ footer a:hover {
 .page2-header {
     display: none;
 }
-
 
 .hobbies-list>li:before {
     position: absolute;
