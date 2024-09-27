@@ -122,7 +122,6 @@ summary span.right {
 }
 
 .competency-indicator {
-    display: inline-block;
     font-size: 1rem;
     /* Adjust size as needed */
     line-height: 1;
@@ -130,6 +129,18 @@ summary span.right {
     color: var(--dark-color);
     /* Fill color for stars */
     padding-left: 0.25em;
+}
+
+.dark-color {
+    color: var(--dark-color);
+}
+
+.medium-color {
+    color: var(--medium-color);
+}
+
+.light-color {
+    color: var(--light-color);
 }
 
 .basic-understanding::before {
