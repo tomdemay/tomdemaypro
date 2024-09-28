@@ -55,15 +55,14 @@ h3 {
     color: var(--dark-color);
 }
 
-a {
-    text-decoration: none;
-    color: var(--dark-color);
-    font-weight: bolder;
+a:visited {
+    font-weight: normal;
+    color: inherit;
 }
 
-a:visited {
-    font-weight: bolder;
-    color: var(--dark-color);
+a:link {
+    font-weight: normal;
+    color: inherit;
 }
 
 .headercontent>.address {

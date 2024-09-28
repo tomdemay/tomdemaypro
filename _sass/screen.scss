@@ -25,6 +25,14 @@ a {
     box-sizing: border-box;
 }
 
+a {
+    color: var(--dark-color);
+}
+
+a:visited {
+    color: var(--dark-color);
+}
+
 /* Global styles */
 body {
     background-color: #666;
@@ -575,6 +583,12 @@ footer a:hover {
     .left-pane a {
         color: var(--light-color);
         text-decoration: none;
+    }
+    .left-pane a:link {
+        font-weight: normal;
+    }
+    .left-pane a:visited {
+        font-weight: normal;
     }
 
     .skill-items li:hover {

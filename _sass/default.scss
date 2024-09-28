@@ -26,6 +26,14 @@ h3 {
     margin: 0px;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit;
+}
+
 .page-break {
     border: none;
     height: 0;
