@@ -29,7 +29,7 @@ a {
 body {
     background-color: #666;
     color: #333;
-    line-height: 1.5;
+    line-height: 1.35;
 }
 
 header {
@@ -191,15 +191,6 @@ img.tomdemaypro-logo {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-.left-pane {
-    margin: 10px 0 5px 0;
-    float: left;
-    width: 100px;
-    height: 120px;
-    padding: 10px 10px 10px 20px;
-    user-select: none;
-}
-
 .cover-letter {
     padding: 10px;
 }
@@ -223,15 +214,17 @@ img.tomdemaypro-logo {
 }
 
 .headshot {
-    top: 0px;
-    margin: 0;
     float: left;
+    margin: 0 0 40px 0;
+    padding: 20px;
     border-radius: 50%;
-    padding: 0;
     width: 100px;
     height: auto;
     border-radius: 50%;
-    /*animation: rotateAnimation 5s linear infinite;*/
+    top: 66px;
+    position: relative;
+
+    // animation: rotateAnimation 5s linear infinite;
 }
 
 @keyframes rotateAnimation {
@@ -332,8 +325,8 @@ details>div {
     position: fixed;
     top: 66px;
     bottom: 0px;
-    overflow-y: auto;
     width: 100%;
+    overflow-y: auto;
 }
 
 footer {
@@ -377,39 +370,8 @@ footer a:hover {
     color: #fff;
 }
 
-.hobbies-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 8px;
-    align-items: flex-start;
-    list-style-position: outside;
-}
-
-.hobbies-list>li {
-    display: flex;
-    align-items: center;
-    padding-left: 1em;
-    position: relative;
-    line-height: 20px;
-    font-size: 0.9rem;
-}
-
 .page2-header {
     display: none;
-}
-
-.hobbies-list>li:before {
-    position: absolute;
-    content: "";
-    top: 0.25em;
-    left: 0;
-    width: 0.75em;
-    height: 0.75em;
-    background-image: linear-gradient(to right,
-            var(--dark-color),
-            var(--light-color));
-    border-radius: 50%;
-    margin-right: 0.5em;
 }
 
 .projects-list {
@@ -449,6 +411,65 @@ footer a:hover {
     }
 }
 
+.hobbies-list>li:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media (min-width: 321px) {
+    .hobbies-list {
+        grid-template-columns: 1fr 15px 1fr 0px ;
+    }
+}
+
+@media (min-width: 471px) {
+    .hobbies-list {
+        grid-template-columns: repeat(2, 1fr 15px) 1fr 0px;
+    }
+}
+
+@media (min-width: 601px) {
+    .hobbies-list {
+        grid-template-columns: 1fr 15px 1fr 0px ;
+    }
+}
+
+@media (min-width: 751px) {
+    .hobbies-list {
+        grid-template-columns: repeat(2, 1fr 15px) 1fr 0px;
+    }
+}
+
+@media (min-width: 901px) {
+    .hobbies-list {
+        grid-template-columns: repeat(3, 1fr 15px) 1fr 0px;
+    }
+}
+
+@media (min-width: 1051px) {
+    .hobbies-list {
+        grid-template-columns: repeat(4, 1fr 15px) 1fr 0px;
+    }
+}
+
+@media (min-width: 1301px) {
+    .hobbies-list {
+        grid-template-columns: repeat(5, 1fr 15px) 1fr 0px;
+    }
+}
+
+@media (min-width: 1451px) {
+    .hobbies-list {
+        grid-template-columns: repeat(6, 1fr 15px) 1fr 0px;
+    }
+}
+
+@media (min-width: 1601px) {
+    .hobbies-list {
+        grid-template-columns: repeat(7, 1fr 15px) 1fr;
+    }
+}
+
 .projects-list>li {
     background-color: #ddd;
     border-radius: 8px;
@@ -461,7 +482,8 @@ footer a:hover {
 .projects-list>li:hover {
     transform: translateY(-2px);
     background-color: #ccc;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 1);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
 
 .projects-list ul {
@@ -473,41 +495,29 @@ footer a:hover {
     padding: 0 0 0 20px;
 }
 
-.two-column-list {
-    list-style-type: none;
-    padding-right: 10px;
-}
-
 .flexdiv {
     display: flex;
     justify-content: space-between;
 }
 
+.two-column-list {
+    padding-right: 10px;
+}
+
 .two-column-list li {
-    justify-content: space-between;
     border: 1px solid #ccc;
-    box-sizing: border-box;
     background-color: #ddd;
     padding: 10px;
-    border-radius: 8px;
     background-image: linear-gradient(to right, #fff, #ccc);
 }
 
-.two-column-list li .left {
-    text-align: left;
+.two-column-list li:hover {
+    transform: translateY(-2px);
+    background-color: #ccc;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
 
-.two-column-list li .right {
-    text-align: right;
-}
-
-.skill-category {
-    font-weight: bold;
-}
-
-.skill-category:not(:first-child) {
-    margin-top: 10px;
-}
 
 .toggle-nav {
     display: none;
@@ -528,32 +538,37 @@ footer a:hover {
 
     .content {
         display: flex;
+        overflow-y: auto;
     }
 
     .content>div:first-child {
-        position: sticky;
-        left: 0;
-        flex: initial;
-        top: 0;
-        left: 0;
-        float: none;
-        position: sticky;
-        width: 200px;
+        width: 220px;
         height: auto;
-        margin: 0;
-        border-radius: initial;
         padding: 20px 10px 0 10px;
     }
 
     .content>.stacked-container {
         display: grid;
         flex: 1;
+        overflow-y: auto;
+    }
+
+    .left-pane {
+        display: flex;
+        width: 100px;
+        justify-content: center;
+        user-select: none;
+        text-align: center;
+        line-height: 1.75;
+        color: var(--light-color);
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 
     .left-pane,
-    .left-pane>.links,
     .left-pane h3,
-    .left-pane ul {
+    .left-pane ul,
+    .left-pane>.links {
         display: initial;
     }
 
@@ -562,9 +577,33 @@ footer a:hover {
         text-decoration: none;
     }
 
-    .left-pane a:hover {
+    .skill-items li:hover {
         font-weight: bold;
+        cursor: pointer;
+    }
+
+    .left-pane a:hover {
         color: white;
+    }
+
+    .left-pane li:hover {
+        color: white;
+    }
+
+    .left-pane li {
+        padding: 2px 0 2px 0;
+        color: var(--light-color);
+    }
+
+    .left-pane hr {
+        border-color: var(--light-color);
+        border-style: double;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .left-pane ul {
+        list-style-type: none;
     }
 
     @keyframes moveUpDown {
@@ -581,47 +620,14 @@ footer a:hover {
         }
     }
 
-    .left-pane h3 {
-        font-weight: normal;
-        font-size: 1.2em;
-        color: var(--light-color);
-    }
-
-    .left-pane ul li::before {
-        display: inline-flex;
-        content: "";
-        width: 0.75em;
-        height: 0.75em;
-        background-image: linear-gradient(to right,
-                var(--dark-color),
-                var(--light-color));
-        border-radius: 50%;
-        margin-right: 10px;
-    }
-
-    .left-pane ul {
-        list-style-type: none;
-    }
-
-    .left-pane ul a {
-        text-decoration: none;
-        color: var(--light-color);
-    }
-
-    .left-pane ul li {
-        text-indent: -20px;
-        padding-left: 20px;
-        font-size: 0.85em;
-    }
-
-    .left-pane ul a:hover {
-        font-weight: bold;
-        color: #fff;
-    }
-
     .headshot {
+        float: initial;
+        padding: initial;
+        margin: initial;
         width: 200px;
         height: auto;
+        top: initial;
+        position: initial;
     }
 
     .content {

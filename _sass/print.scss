@@ -37,7 +37,6 @@ p {
 body {
     margin: 0 10px 0 10px;
     padding: 20px;
-    /* box-sizing: border-box; */
     padding: 0;
     font-size: 0.79em;
 }
@@ -123,7 +122,6 @@ details summary {
     margin: 0;
     padding: 5px;
     border-top: 2px solid var(--dark-color);
-    /* Adds a solid line above */
 }
 
 details>div,
@@ -148,23 +146,6 @@ details>div {
     padding: 5px 0px 5px 10px;
 }
 
-.hobbies-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 2px;
-    align-items: flex-start;
-    list-style-position: outside;
-    padding: 3px;
-    margin: 0 0 0 20px;
-}
-
-.hobbies-list>li {
-    break-inside: avoid-page;
-    padding: 0 20px 0 0;
-    line-height: 15px;
-    font-size: 0.95em;
-}
-
 .projects-list {
     padding-left: 20px;
 }
@@ -178,41 +159,76 @@ details>div {
     margin-bottom: 5px;
 }
 
-.two-column-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
 .flexdiv {
     display: flex;
     justify-content: space-between;
 }
 
-.two-column-list li {
-    justify-content: space-between;
+.projects-list {
+    margin: 0 10px;
+}
+
+.two-column-list {
+    padding: 0;
     margin: 0;
+}
+
+.two-column-list li {
+    margin: 0 10px;
     border-top: 1px solid #ccc;
     box-sizing: content-box;
     padding: 5px;
 }
 
-.two-column-list li .left {
-    text-align: left;
+.two-column-list li .right {
+    padding-right: 5px;
 }
 
-.two-column-list li .right {
-    text-align: right;
-    padding-right: 5px;
+@media (min-width: 201px) {
+    .hobbies-list {
+        grid-template-columns: 1fr 15px 1fr 0px ;
+    }
+}
+
+@media (min-width: 371px) {
+    .hobbies-list {
+        grid-template-columns: repeat(2, 1fr 15px) 1fr 0px;
+    }
+}
+
+@media (min-width: 501px) {
+    .hobbies-list {
+        grid-template-columns: repeat(3, 1fr 15px) 1fr 0px;
+    }
+}
+
+@media (min-width: 601px) {
+    .hobbies-list {
+        grid-template-columns: repeat(4, 1fr 15px) 1fr 0px;
+    }
+}
+
+@media (min-width: 751px) {
+    .hobbies-list {
+        grid-template-columns: repeat(5, 1fr 15px) 1fr 0px;
+    }
+}
+
+@media (min-width: 901px) {
+    .hobbies-list {
+        grid-template-columns: repeat(6, 1fr 15px) 1fr 0px;
+    }
+}
+
+@media (min-width: 1051px) {
+    .hobbies-list {
+        grid-template-columns: repeat(7, 1fr 15px) 1fr;
+    }
 }
 
 @page {
     size: auto;
     margin: 20px;
-}
-
-@page :bottom {
-    content: none;
 }
 
 .page2-header {
