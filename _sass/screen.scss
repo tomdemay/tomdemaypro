@@ -66,11 +66,6 @@ nav {
     user-select: none;
 }
 
-details summary {
-    cursor: pointer;
-    color: white;
-}
-
 .code-snippet {
     padding: 10px;
     font-family: "Courier New", monospace;
@@ -221,27 +216,23 @@ img.tomdemaypro-logo {
     padding: 10px;
 }
 
-.headshot {
-    float: left;
-    margin: 0 0 40px 0;
-    padding: 20px;
-    border-radius: 50%;
+details>.headshot {
     width: 100px;
-    height: auto;
-    border-radius: 50%;
-    top: 66px;
-    position: relative;
-
-    // animation: rotateAnimation 5s linear infinite;
 }
 
-@keyframes rotateAnimation {
-    0% {
-        transform: rotate(0deg);
+@media (min-width: 601px) and (min-height: 550px) {
+    details>.headshot {
+        display: none;
     }
 
-    100% {
-        transform: rotate(360deg);
+    .headshot {
+        display: initial;
+        width: 200px;
+    }
+
+    .left-pane>.headshot {
+        display: initial;
+        width: 200px;
     }
 }
 
@@ -249,7 +240,9 @@ details {
     margin: 10px 0 10px 0;
 }
 
-details summary {
+details>summary {
+    cursor: pointer;
+    color: white;
     border: 1px solid #ddd;
     transition: background-color 3s, color 3s;
     background-image: linear-gradient(to right,
@@ -259,45 +252,41 @@ details summary {
     padding: 10px;
 }
 
-summary span.left {
-    left: 30px;
+details[open]>summary {
+    background-image: linear-gradient(to right,
+            var(--light-color),
+            var(--dark-color));
 }
 
-summary span.right {
-    right: 20px;
+details[open]>details:not([open])>summary {
+    background-image: linear-gradient(to right,
+            var(--dark-color),
+            var(--light-color));
 }
 
-summary:hover {
+details>summary:hover {
     background-image: linear-gradient(to right,
             var(--light-color),
             var(--dark-color));
     color: #666;
 }
 
-details span.left {
-    text-align: left;
+details>summary>.header::before {
+    content: '▶';
+    margin-right: 10px;
+    display: inline-block;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
 }
 
-details span.right {
-    flex-basis: auto;
-    text-align: right;
-}
-
-details[open] summary:before {
+details[open]>summary>.header::before {
     transform: rotate(90deg);
 }
 
-details[open] summary {
-    background-image: linear-gradient(to right,
-            var(--light-color),
-            var(--dark-color));
+details>summary>.header>.right {
+    margin-left: auto;
 }
 
-details[open] details:not([open])>summary {
-    background-image: linear-gradient(to right,
-            var(--dark-color),
-            var(--light-color));
-}
 
 details>div,
 details>ul,
@@ -373,8 +362,11 @@ footer a {
     text-decoration: none;
 }
 
+footer a:visited {
+    color: var(--light-color);
+}
+
 footer a:hover {
-    font-weight: bolder;
     color: #fff;
 }
 
@@ -426,7 +418,7 @@ footer a:hover {
 
 @media (min-width: 321px) {
     .hobbies-list {
-        grid-template-columns: 1fr 15px 1fr 0px ;
+        grid-template-columns: 1fr 15px 1fr 0px;
     }
 }
 
@@ -438,7 +430,7 @@ footer a:hover {
 
 @media (min-width: 601px) {
     .hobbies-list {
-        grid-template-columns: 1fr 15px 1fr 0px ;
+        grid-template-columns: 1fr 15px 1fr 0px;
     }
 }
 
@@ -584,9 +576,11 @@ footer a:hover {
         color: var(--light-color);
         text-decoration: none;
     }
+
     .left-pane a:link {
         font-weight: normal;
     }
+
     .left-pane a:visited {
         font-weight: normal;
     }
@@ -632,16 +626,6 @@ footer a:hover {
         100% {
             transform: translateY(0);
         }
-    }
-
-    .headshot {
-        float: initial;
-        padding: initial;
-        margin: initial;
-        width: 200px;
-        height: auto;
-        top: initial;
-        position: initial;
     }
 
     .content {

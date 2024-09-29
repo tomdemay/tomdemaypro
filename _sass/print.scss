@@ -11,23 +11,18 @@ footer,
     display: none;
 }
 
-.local-headshot {
-    width: 125px;
-}
-
-.remote-headshot {
-    width: 100px;
+details>.headshot {
+    display: none;
 }
 
 .headshot {
-    top: 0px;
-    display: block;
-    float: left;
     position: absolute;
-    height: auto;
-    padding: 5px;
-    border-radius: 50%;
-}
+    left: 10px;
+    padding: 10px 0 0 10px;
+    width: 110px;
+    z-index: 10;
+    
+ }
 
 /* Reset styles */
 p {
@@ -236,12 +231,6 @@ details>div {
     justify-content: center;
     align-items: center;
     text-align: center;
-}
-
-
-.page2-headshot {
-    padding: 5px;
-    border-radius: 50%;
 }
 
 .page2-header>.table {

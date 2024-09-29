@@ -1,20 +1,25 @@
 <details id="asyncio">
-    <summary>Python AsyncIo</summary>
+    <summary>
+        <div class="header">
+            <span class="left">Python AsyncIo</span>
+            <span class="right"></span>
+        </div>
+    </summary>
     <p>
-        Python asyncio is a module introduced in Python 3.4 that provides a way 
+        Python asyncio is a module introduced in Python 3.4 that provides a way
         to write asynchronous, concurrent, and non-blocking code. It is built upon the
-        concept of coroutines and event loops.        
+        concept of coroutines and event loops.
     </p>
     <p>Ignoring for a moment that Celery is no longer supported on
-        Windows platform, the Celery/RabbitMQ solution was over kill for what I needed to do. 
-        But it was a good oportunity to learn something new. After I got that working I 
-        threw it all away and decided to use Python AsyncIo to start the background task. 
+        Windows platform, the Celery/RabbitMQ solution was over kill for what I needed to do.
+        But it was a good oportunity to learn something new. After I got that working I
+        threw it all away and decided to use Python AsyncIo to start the background task.
         Starting this as a background task is what allows my WebHook to be able to respond
         to callers to notify them that the Task has been Scheduled without blocking future calls
-        to the REST API while the background task is running. 
+        to the REST API while the background task is running.
     </p>
     <p>
-        So at most, two tasks can be scheduled and they would run asynchronously, one after 
+        So at most, two tasks can be scheduled and they would run asynchronously, one after
         the other, allowing my REST Web Server API to be extremely responsive for my purposes.
     </p>
 </details>

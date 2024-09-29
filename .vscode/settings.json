@@ -1,7 +1,7 @@
 {
     // "editor.formatOnSave": false,
     // "files.autoSave": "off",
-    "files.autoSave": "onFocusChange",    
+    "files.autoSave": "afterDelay",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "[scss]": {
         "editor.defaultFormatter": "vscode.css-language-features"

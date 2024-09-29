@@ -75,23 +75,59 @@ body {
 }
 
 details {
-    margin: 5px 0;
+    width: 100%;
 }
 
-details summary {
+details>summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+details>summary>.header {
+    display: flex;
     justify-content: space-between;
-    align-items: first baseline;
-    position: relative;
+    align-items: center;
+    width: 100%;
 }
 
-summary span.left {
-    position: absolute;
+details>summary::marker {
+    content: '';
 }
 
-summary span.right {
-    position: absolute;
-    right: 5px;
-    color: white;
+details>summary>.header>.right {
+    margin-left: auto;
+}
+
+details>summary>.description {
+    display: block;
+}
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.headshot {
+    border-radius: 50%;
+    height: auto;
+    width: 100px;
+    // animation: rotateAnimation 5s linear infinite;
+}
+
+details>.headshot {
+    display: flex;
+    flex-wrap: wrap;
+    float: left;
+    margin: 10px;
+}
+
+.left-pane>.headshot {
+    display: none;
 }
 
 .two-column-list {
@@ -134,6 +170,7 @@ summary span.right {
     flex-shrink: 0;
     /* Prevent shrinking */
     max-width: 400px;
+    min-width: 150px;
 }
 
 .skill-items {
