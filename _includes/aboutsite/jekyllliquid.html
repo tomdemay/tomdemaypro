@@ -1,31 +1,36 @@
 <details id="jekyll">
-    <summary>Jekyll and Liquid</summary>
-    <p>Jekyll generates static HTML files during the build process. 
+    <summary>
+        <span class="header">
+            <span class="left">Jekyll and Liquid</span>
+            <span class="right"></span>
+        </span>
+    </summary>
+    <p>Jekyll generates static HTML files during the build process.
         Jekyll uses the "Liquid" templating language to create reusable
-        templates for this sites layout and structure. With Liquid, you 
-        can include variables, conditionals, loops, and other logic to 
+        templates for this sites layout and structure. With Liquid, you
+        can include variables, conditionals, loops, and other logic to
         dynamically generate content. </p>
     <p>GitHub only serves static web pages. Initially I had to copy elements
-        that are common to every page to each HTML document. It 
+        that are common to every page to each HTML document. It
         quickly became a pain to keep them in sync and I was constantly
-        breaking something. 
+        breaking something.
     </p>
-    <p>The solution to this problem was solved by moving everything to 
+    <p>The solution to this problem was solved by moving everything to
         Jekyll. This allowed me to break every element down to separate
         files that get pulled together during the build process to build
-        and deploy static web pages to my website. The main pages of this 
+        and deploy static web pages to my website. The main pages of this
         site basically include the name of the Liquid template, the title
-        of the page and the content for the page. I do not need to include 
-        anything else. Jekyll will combine everything using my default Liquid 
+        of the page and the content for the page. I do not need to include
+        anything else. Jekyll will combine everything using my default Liquid
         "layout" template.</p>
     <p>
-        Previously a page like this would have been over 1000 lines of HTML and probably 
-        80% would be duplicated on every page. The code below is what makes up 
+        Previously a page like this would have been over 1000 lines of HTML and probably
+        80% would be duplicated on every page. The code below is what makes up
         the HTML file you are viewing right now. The content for each section
-        is in each of the listed HTML files. You can see how the Liquid templates are broken up for this site at my 
+        is in each of the listed HTML files. You can see how the Liquid templates are broken up for this site at my
         <a href="https://github.com/tomdemay/tomdemaypro" target="_blank">
             GitHub Repository tomdemaypro<i class="fas fa-external-link-alt fa-xs"></i>
-        </a>. 
+        </a>.
     </p>
     <div class="code-snippet">
         <pre><code>---

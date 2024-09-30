@@ -66,11 +66,6 @@ nav {
     user-select: none;
 }
 
-details summary {
-    cursor: pointer;
-    color: white;
-}
-
 .code-snippet {
     padding: 10px;
     font-family: "Courier New", monospace;
@@ -104,101 +99,6 @@ details summary {
     list-style-position: outside;
 }
 
-.tomdemaypro-logo {
-    display: none;
-}
-
-div.tomdemaypro-logo {
-    height: 65px;
-    overflow: hidden;
-    width: 350px;
-    margin: 0;
-}
-
-img.tomdemaypro-logo {
-    margin: 0;
-    height: 100%;
-    transform: translateX(75px) translateY(3px) scale(2.4);
-    transform-origin: center;
-}
-
-.logo-full {
-    display: none;
-    font-size: 24px;
-    color: #fff;
-    font-weight: bold;
-    padding-left: 10px;
-}
-
-.logo-short {
-    font-size: 24px;
-    color: #fff;
-    font-weight: bold;
-    padding-left: 10px;
-}
-
-.navigation {
-    list-style-type: none;
-    display: flex;
-}
-
-.navigation li {
-    flex: 1;
-    min-width: 120px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    background-color: rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease;
-    text-align: center;
-    border-radius: 5px;
-    display: flex;
-    margin: 0 2px;
-}
-
-.navigation li>* {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    display: block;
-    width: 100%;
-    height: 100%;
-    padding: 5px 10px;
-    color: #fff;
-    text-decoration: none;
-    background-color: rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease;
-}
-
-.navigation a,
-.show-download-label-checkbox {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: auto;
-}
-
-.navigation li:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.navigation li:active {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.show-download-label-checkbox {
-    display: inline;
-    cursor: pointer;
-}
-
-.navigation li>input:checked~.show-download-label-checkbox {
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
 .cover-letter {
     padding: 10px;
 }
@@ -221,82 +121,84 @@ img.tomdemaypro-logo {
     padding: 10px;
 }
 
-.headshot {
-    float: left;
-    margin: 0 0 40px 0;
-    padding: 20px;
-    border-radius: 50%;
+details>.headshot {
     width: 100px;
-    height: auto;
-    border-radius: 50%;
-    top: 66px;
-    position: relative;
-
-    // animation: rotateAnimation 5s linear infinite;
 }
 
-@keyframes rotateAnimation {
-    0% {
-        transform: rotate(0deg);
+@media (min-width: 601px) and (min-height: 550px) {
+    details>.headshot {
+        display: none;
     }
 
-    100% {
-        transform: rotate(360deg);
+    .headshot {
+        display: initial;
+        width: 200px;
+    }
+
+    .left-pane>.headshot {
+        display: initial;
+        width: 200px;
     }
 }
 
-details {
-    margin: 10px 0 10px 0;
+/* Left-aligned header text */
+details>summary>.header>.left {
+    padding-left: 1.5em;
 }
 
-details summary {
+/* Description under the header */
+details>summary>.description {
+    padding-left: 1.5em;
+}
+
+/* Custom marker */
+details>summary::before {
+    content: '\29BD';
+    /* Custom marker symbol (U+29BD) */
+    position: absolute;
+    left: 9px;
+    /* Position the marker on the left */
+    top: 9px;
+    /* Align the marker to the top */
+    // font-size: 1.2em;
+    transform: rotate(90deg);
+    /* Rotate marker 90 degrees */
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Rotate marker when the details element is open */
+details[open]>summary::before {
+    transform: rotate(180deg);
+}
+
+details>summary {
+    cursor: pointer;
+    color: white;
     border: 1px solid #ddd;
     transition: background-color 3s, color 3s;
     background-image: linear-gradient(to right,
             var(--dark-color),
             var(--light-color));
-    margin: 0;
     padding: 10px;
 }
 
-summary span.left {
-    left: 30px;
+details[open]>summary {
+    background-image: linear-gradient(to right,
+            var(--light-color),
+            var(--dark-color));
 }
 
-summary span.right {
-    right: 20px;
+details[open]>details:not([open])>summary {
+    background-image: linear-gradient(to right,
+            var(--dark-color),
+            var(--light-color));
 }
 
-summary:hover {
+details>summary:hover {
     background-image: linear-gradient(to right,
             var(--light-color),
             var(--dark-color));
     color: #666;
-}
-
-details span.left {
-    text-align: left;
-}
-
-details span.right {
-    flex-basis: auto;
-    text-align: right;
-}
-
-details[open] summary:before {
-    transform: rotate(90deg);
-}
-
-details[open] summary {
-    background-image: linear-gradient(to right,
-            var(--light-color),
-            var(--dark-color));
-}
-
-details[open] details:not([open])>summary {
-    background-image: linear-gradient(to right,
-            var(--dark-color),
-            var(--light-color));
 }
 
 details>div,
@@ -373,13 +275,12 @@ footer a {
     text-decoration: none;
 }
 
-footer a:hover {
-    font-weight: bolder;
-    color: #fff;
+footer a:visited {
+    color: var(--light-color);
 }
 
-.page2-header {
-    display: none;
+footer a:hover {
+    color: #fff;
 }
 
 .projects-list {
@@ -426,7 +327,7 @@ footer a:hover {
 
 @media (min-width: 321px) {
     .hobbies-list {
-        grid-template-columns: 1fr 15px 1fr 0px ;
+        grid-template-columns: 1fr 15px 1fr 0px;
     }
 }
 
@@ -438,7 +339,7 @@ footer a:hover {
 
 @media (min-width: 601px) {
     .hobbies-list {
-        grid-template-columns: 1fr 15px 1fr 0px ;
+        grid-template-columns: 1fr 15px 1fr 0px;
     }
 }
 
@@ -527,10 +428,6 @@ footer a:hover {
 }
 
 
-.toggle-nav {
-    display: none;
-}
-
 .shadowbox {
     display: block;
     box-shadow: 10px 10px rgba(0, 0, 0, 0.5);
@@ -539,11 +436,176 @@ footer a:hover {
     border-radius: 20px;
 }
 
-@media only screen and (min-width: 601px) and (min-height: 550px) {
-    .toggle-nav-label {
-        display: none;
+.dropdown-menu-check-box {
+    display: none;
+}
+
+
+.tomdemaypro-logo {
+    overflow: hidden;
+    width: 350px;
+    margin: 0;
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.tomdemaypro-logo>img {
+    display: none;
+    margin: 0;
+    height: 65px;
+    transform: translateX(75px) translateY(3px) scale(2.4);
+    transform-origin: center;
+}
+
+.tomdemaypro-logo>.logo-full {
+    display: none;
+    padding-left: 10px;
+}
+
+.tomdemaypro-logo>.logo-short {
+    display: none;
+    padding-left: 10px;
+}
+
+.hamburger-menu {
+    display: none;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-icon {
+    display: block;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+}
+
+.line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    margin-bottom: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu-check-box:checked~.navigation-menu-items {
+    display: flex;
+}
+
+.navigation-menu-items {
+    list-style-type: none;
+    display: none;  // menu is collapsed by default, only show when checkbox is checked
+    align-items: center;
+}
+
+.navigation-menu-items li {
+    flex: 1;
+    min-width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+    text-align: center;
+    border-radius: 5px;
+    display: flex;
+    margin: 0 2px;
+}
+
+.navigation-menu-items li>* {
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.navigation-menu-items a,
+.show-download-label-checkbox {
+    color: #fff;
+    font-size: 18px;
+    width: 100%;
+}
+
+.navigation-menu-items li:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navigation-menu-items li:active {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.show-download-label-checkbox {
+    display: inline;
+    cursor: pointer;
+}
+
+// .navigation-menu-items li>input:checked~.show-download-label-checkbox {
+//     background-color: rgba(0, 0, 0, 0.7);
+// }
+
+@media (min-width: 225px) and (max-width: 299px) {
+    .tomdemaypro-logo>.logo-short {
+        display: inherit;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 389px) {
+    .tomdemaypro-logo>.logo-full {
+        display: inherit;
+    }
+}
+
+@media (min-width: 390px) {
+    .tomdemaypro-logo>img {
+        display: inherit;
+    }
+}
+
+@media (max-width: 984px) {
+    // CSS for mobile view
+
+    .hamburger-menu {
+        display: flex;
+    }
+    .navigation-menu-items {
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 5px;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        z-index: 2;
+        flex-direction: column;
     }
 
+    .navigation-menu-items li {
+        margin: 10px 0;
+    }
+}
+
+@media (min-width: 985px) {
+    // css fpr screem view
+
+    .navigation-menu-items {
+        display: flex;
+        background-color: unset;
+        padding: 0;
+        flex-direction: row;
+    }
+
+    .navigation-menu-items > li {
+        margin: 0 2px;
+    }
+
+}
+
+
+@media (min-width: 601px) and (min-height: 550px) {
     .content {
         display: flex;
         overflow-y: auto;
@@ -584,9 +646,11 @@ footer a:hover {
         color: var(--light-color);
         text-decoration: none;
     }
+
     .left-pane a:link {
         font-weight: normal;
     }
+
     .left-pane a:visited {
         font-weight: normal;
     }
@@ -632,16 +696,6 @@ footer a:hover {
         100% {
             transform: translateY(0);
         }
-    }
-
-    .headshot {
-        float: initial;
-        padding: initial;
-        margin: initial;
-        width: 200px;
-        height: auto;
-        top: initial;
-        position: initial;
     }
 
     .content {

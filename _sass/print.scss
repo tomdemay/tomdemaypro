@@ -11,22 +11,17 @@ footer,
     display: none;
 }
 
-.local-headshot {
-    width: 125px;
-}
-
-.remote-headshot {
-    width: 100px;
+details>.headshot {
+    display: none;
 }
 
 .headshot {
-    top: 0px;
-    display: block;
-    float: left;
     position: absolute;
-    height: auto;
-    padding: 5px;
-    border-radius: 50%;
+    left: 10px;
+    padding: 10px 0 0 10px;
+    width: 90px;
+    z-index: 10;
+
 }
 
 /* Reset styles */
@@ -185,7 +180,7 @@ details>div {
 
 @media (min-width: 201px) {
     .hobbies-list {
-        grid-template-columns: 1fr 15px 1fr 0px ;
+        grid-template-columns: 1fr 15px 1fr 0px;
     }
 }
 
@@ -228,72 +223,6 @@ details>div {
 @page {
     size: auto;
     margin: 20px;
-}
-
-.page2-header {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-
-.page2-headshot {
-    padding: 5px;
-    border-radius: 50%;
-}
-
-.page2-header>.table {
-    display: grid;
-    grid-template-columns: 100px auto 100px;
-    gap: 0 10px;
-    width: 100%;
-}
-
-.page2-header>.table>.cell {
-    padding: 0;
-    margin: 0;
-}
-
-.page2-header>.table>.column-one {
-    text-align: left;
-}
-
-.page2-header>.table>.column-two {
-    text-align: center;
-}
-
-.page2-header>.table>.column-three {
-    text-align: right;
-}
-
-
-.page2-header .links {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.page2-header .links>.table {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 0 10px;
-}
-
-.page2-header .links>.table>.cell {
-    padding: 0;
-    margin: 0;
-}
-
-.page2-header .links>.table>.column-one {
-    text-align: right;
-}
-
-.page2-header .links>.table>.column-two {
-    text-align: left;
 }
 
 .code-snippet {

@@ -74,24 +74,84 @@ body {
     text-align: left;
 }
 
-details {
-    margin: 5px 0;
-}
 
-details summary {
-    justify-content: space-between;
-    align-items: first baseline;
+
+/* Base styles for summary */
+details > summary {
+    display: flex;
+    flex-direction: column;
     position: relative;
+    padding-left: 1.5em; /* Space for the custom marker */
+    list-style: none; /* Remove default list styling */
+    appearance: none; /* Disable default appearance */
+    -webkit-appearance: none; /* For Safari and iOS */
+    text-indent: 0; /* Ensure no unintended indent */
 }
 
-summary span.left {
-    position: absolute;
+/* Hide the default marker in WebKit-based browsers (Safari, Chrome on iOS) */
+details > summary::-webkit-details-marker {
+    display: none; /* Remove default native marker */
 }
 
-summary span.right {
-    position: absolute;
-    right: 5px;
-    color: white;
+details > summary::marker {
+    display: none; /* Remove default marker in Firefox */
+    content: none; /* Remove default marker in Firefox */
+}
+
+/* Styling for header */
+details > summary > .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    width: 100%;
+}
+
+/* Left-aligned header text */
+details > summary > .header > .left {
+    text-align: left;
+    word-wrap: break-word;
+    // max-width: 60%;
+}
+
+/* Right-aligned header text */
+details > summary > .header > .right {
+    text-align: right;
+    word-wrap: break-word;
+    // max-width: 30%;
+}
+
+/* Description under the header */
+details > summary > .description {
+    margin-top: 5px;
+}
+
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.headshot {
+    border-radius: 50%;
+    height: auto;
+    width: 100px;
+    // animation: rotateAnimation 5s linear infinite;
+}
+
+details>.headshot {
+    display: flex;
+    flex-wrap: wrap;
+    float: left;
+    margin: 10px;
+}
+
+.left-pane>.headshot {
+    display: none;
 }
 
 .two-column-list {
@@ -134,6 +194,7 @@ summary span.right {
     flex-shrink: 0;
     /* Prevent shrinking */
     max-width: 400px;
+    min-width: 150px;
 }
 
 .skill-items {
@@ -197,21 +258,31 @@ summary span.right {
 
 .competency-level .large.novice::after {
     content: "★☆☆☆☆";
+    display: block;
+    margin-left: 5px;
 }
 
 .competency-level .large.beginner::after {
     content: "★★☆☆☆";
+    display: block;
+    margin-left: 5px;
 }
 
 .competency-level .large.intermediate::after {
     content: "★★★☆☆";
+    display: block;
+    margin-left: 5px;
 }
 
 .competency-level .large.advanced::after,
 .competency-level .large.proficient::after {
     content: "★★★★☆";
+    display: block;
+    margin-left: 5px;
 }
 
 .competency-level .large.expert::after {
     content: "★★★★★";
+    display: block;
+    margin-left: 5px;
 }

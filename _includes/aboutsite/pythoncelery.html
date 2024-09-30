@@ -1,24 +1,29 @@
 <details id="celery">
-    <summary>Python Celery</summary>
-    <p>Python Celery is a distributed task queue system that 
-        enables you to perform asynchronous and distributed processing in Python. It allows 
-        you to define tasks that can be executed asynchronously in the background. 
+    <summary>
+        <span class="header">
+            <span class="left">Python Celery</span>
+            <span class="right"></span>
+        </span>
+    </summary>
+    <p>Python Celery is a distributed task queue system that
+        enables you to perform asynchronous and distributed processing in Python. It allows
+        you to define tasks that can be executed asynchronously in the background.
     </p>
     <p>
-        I needed a solution that will allow my Python Flask REST API web server to kick off a task 
-        to recreate my CV and Resume PDFs without blocking calls to the server while the 
-        task is running. In order to do so, I needed a background task. Here's the catch,  
-        Python's multi-threading is limited by Python's Global Interpreter Lock (GIL). 
-        Therefore, running my task in a separate thread can make my WebSite unavailable 
-        to callers until the task is done. 
+        I needed a solution that will allow my Python Flask REST API web server to kick off a task
+        to recreate my CV and Resume PDFs without blocking calls to the server while the
+        task is running. In order to do so, I needed a background task. Here's the catch,
+        Python's multi-threading is limited by Python's Global Interpreter Lock (GIL).
+        Therefore, running my task in a separate thread can make my WebSite unavailable
+        to callers until the task is done.
     </p>
     <p>
-        Using Celery I can post a notification to a "Message Broker". A 
+        Using Celery I can post a notification to a "Message Broker". A
         separate Celery Worker process pulls that task from the Message Broker
         and executes it in the Worker's process, freeing up my REST Web server
-        to just respond to REST API calls and queing work to be done elsewhere. 
+        to just respond to REST API calls and queing work to be done elsewhere.
     </p>
-    <p>The Flask REST Website accepts a call from the WebHook and responds with 
+    <p>The Flask REST Website accepts a call from the WebHook and responds with
         200: "Task Scheduled", or 429: "The requested work is already being processed"
         and hands the task off to Celery to run the job.
     </p>
